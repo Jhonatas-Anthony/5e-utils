@@ -1,10 +1,16 @@
 <script setup lang="ts">
+import { i18n, setLocale } from '@/i18n'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { menuItems } from '@/config/menu'
+import { useI18n } from 'vue-i18n'
+
+const { t, locale } = useI18n()
+const currentLocale = ref<typeof i18n.global.locale.value>(
+  locale.value as typeof i18n.global.locale.value,
+)
 
 const menuOpen = ref(false)
 const openSubmenu = ref<string | null>(null)
-const menuRef = ref<HTMLElement | null>(null)
+const navbarRef = ref<HTMLElement | null>(null)
 
 function toggleMenu() {
   menuOpen.value = !menuOpen.value
@@ -20,10 +26,14 @@ function isSubmenuOpen(label: string) {
 }
 
 function handleClickOutside(event: MouseEvent) {
-  if (menuRef.value && !menuRef.value.contains(event.target as Node)) {
+  if (navbarRef.value && !navbarRef.value.contains(event.target as Node)) {
     menuOpen.value = false
     openSubmenu.value = null
   }
+}
+
+function changeLanguage() {
+  setLocale(currentLocale.value)
 }
 
 onMounted(() => document.addEventListener('click', handleClickOutside))
@@ -32,25 +42,47 @@ onBeforeUnmount(() => document.removeEventListener('click', handleClickOutside))
 
 <template>
   <nav ref="navbarRef">
-    <button @click.stop="toggleMenu">☰ Menu</button>
+    <div>
+      <button @click.stop="toggleMenu">{{ t('common.menu') }}</button>
 
-    <div v-if="menuOpen" class="menu" ref="menuRef">
+      <select v-model="currentLocale" @change="changeLanguage">
+        <option value="pt">Português Brasil</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+
+    <div v-if="menuOpen">
       <ul>
-        <li v-for="item in menuItems" :key="item.label">
-          <template v-if="!item.children">
-            <router-link :to="item.route || '#'">{{ item.label }}</router-link>
-          </template>
-
-          <template v-else>
-            <button @click.stop="toggleSubmenu(item.label)">
-              {{ item.label }}
-            </button>
-            <ul v-if="isSubmenuOpen(item.label)">
-              <li v-for="child in item.children" :key="child.label">
-                <router-link :to="child.route || '#'">{{ child.label }}</router-link>
-              </li>
-            </ul>
-          </template>
+        <li>
+          <router-link to="/">{{ t('navbar.home') }}</router-link>
+        </li>
+        <li>
+          <button @click.stop="toggleSubmenu('users')">
+            {{ t('navbar.users.title') }}
+          </button>
+          <ul v-if="isSubmenuOpen('users')">
+            <li>
+              <router-link to="/users">{{ t('navbar.users.list') }}</router-link>
+            </li>
+            <li>
+              <router-link to="/users/new">{{ t('navbar.users.new') }}</router-link>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <button @click.stop="toggleSubmenu('settings')">
+            {{ t('navbar.settings.title') }}
+          </button>
+          <ul v-if="isSubmenuOpen('settings')">
+            <li>
+              <router-link to="/settings/profile">{{ t('navbar.settings.profile') }}</router-link>
+            </li>
+            <li>
+              <router-link to="/settings/preferences">{{
+                t('navbar.settings.preferences')
+              }}</router-link>
+            </li>
+          </ul>
         </li>
       </ul>
     </div>
