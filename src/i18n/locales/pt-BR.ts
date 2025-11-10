@@ -2,11 +2,15 @@ export default {
   common: {
     menu: 'Menu',
     home: 'Início',
+    spells: 'Magias',
     users: 'Usuários',
     settings: 'Configurações',
   },
   navbar: {
     home: 'Início',
+    spells: {
+      create: 'Criar Magia',
+    },
     users: {
       title: 'Usuários',
       list: 'Listar Usuários',

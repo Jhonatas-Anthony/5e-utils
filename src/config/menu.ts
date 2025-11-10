@@ -6,21 +6,13 @@ export interface MenuItem {
 
 export const menuItems: MenuItem[] = [
   {
-    label: 'Início',
+    label: 'common.home',
     route: '/',
   },
   {
-    label: 'Usuários',
+    label:'common.spells',
     children: [
-      { label: 'Listar Usuários', route: '/users' },
-      { label: 'Novo Usuário', route: '/users/new' },
-    ],
-  },
-  {
-    label: 'Configurações',
-    children: [
-      { label: 'Perfil', route: '/settings/profile' },
-      { label: 'Preferências', route: '/settings/preferences' },
-    ],
+      { label: 'navbar.spells.create', route: '/spells/create' },
+    ]
   },
 ]

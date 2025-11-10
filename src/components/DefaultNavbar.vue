@@ -2,6 +2,7 @@
 import { i18n, setLocale } from '@/i18n'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { menuItems } from '@/config/menu'
 
 const { t, locale } = useI18n()
 const currentLocale = ref<typeof i18n.global.locale.value>(
@@ -53,36 +54,28 @@ onBeforeUnmount(() => document.removeEventListener('click', handleClickOutside))
 
     <div v-if="menuOpen">
       <ul>
-        <li>
-          <router-link to="/">{{ t('navbar.home') }}</router-link>
-        </li>
-        <li>
-          <button @click.stop="toggleSubmenu('users')">
-            {{ t('navbar.users.title') }}
-          </button>
-          <ul v-if="isSubmenuOpen('users')">
-            <li>
-              <router-link to="/users">{{ t('navbar.users.list') }}</router-link>
-            </li>
-            <li>
-              <router-link to="/users/new">{{ t('navbar.users.new') }}</router-link>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <button @click.stop="toggleSubmenu('settings')">
-            {{ t('navbar.settings.title') }}
-          </button>
-          <ul v-if="isSubmenuOpen('settings')">
-            <li>
-              <router-link to="/settings/profile">{{ t('navbar.settings.profile') }}</router-link>
-            </li>
-            <li>
-              <router-link to="/settings/preferences">{{
-                t('navbar.settings.preferences')
-              }}</router-link>
-            </li>
-          </ul>
+        <li v-for="item in menuItems" :key="item.label">
+          <template v-if="item.children">
+            <button @click.stop="toggleSubmenu(item.label)">
+              {{ t(item.label) }}
+            </button>
+            <ul v-if="isSubmenuOpen(item.label)">
+              <li
+                v-for="subitem in item.children"
+                :key="subitem.label"
+              >
+                <router-link :to="subitem.route!">
+                  {{ t(subitem.label) }}
+                </router-link>
+              </li>
+            </ul>
+          </template>
+
+          <template v-else>
+            <router-link :to="item.route!">
+              {{ t(item.label) }}
+            </router-link>
+          </template>
         </li>
       </ul>
     </div>

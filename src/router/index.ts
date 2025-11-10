@@ -1,3 +1,4 @@
+
 import { createRouter, createWebHistory } from 'vue-router'
 
 const router = createRouter({
@@ -9,6 +10,18 @@ const router = createRouter({
       component: () => import('../layout/DefaultLayout.vue'),
       children: [],
     },
+    {
+      path: '/spells',
+      name: 'spells',
+      component: () => import('../layout/DefaultLayout.vue'),
+      children: [
+        {
+          path: 'create',
+          name: 'spell-create',
+          component: () => import('../modules/spell/pages/SpellCreator.vue')
+        }
+      ],
+    }
   ],
 })
 

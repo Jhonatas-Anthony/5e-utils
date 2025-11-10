@@ -1,6 +1,6 @@
 import { createI18n } from 'vue-i18n'
-import pt from './locaes/pt-BR'
-import en from './locaes/en'
+import pt from './locales/pt-BR'
+import en from './locales/en'
 
 const DEFAULT_LOCALE = localStorage.getItem('locale') || 'pt'
 
