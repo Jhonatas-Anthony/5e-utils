@@ -8,3 +8,11 @@ export interface Spell {
   duration: string;
   description: string;
 }
+
+export interface Item {
+  title: string;
+  description: string;
+  damage?: string;
+  properties: string;
+  CA?: number;
+}

@@ -11,14 +11,19 @@ const router = createRouter({
       children: [],
     },
     {
-      path: '/spells',
-      name: 'spells',
+      path: '/create',
+      name: 'criation',
       component: () => import('../layout/DefaultLayout.vue'),
       children: [
         {
-          path: 'create',
+          path: 'spells',
           name: 'spell-create',
-          component: () => import('../modules/spell/pages/SpellCreator.vue')
+          component: () => import('../modules/creation/pages/SpellCreator.vue')
+        }, 
+        {
+          path: 'items',
+          name: 'item-create',
+          component: () => import('../modules/creation/pages/ItemCreator.vue')
         }
       ],
     }

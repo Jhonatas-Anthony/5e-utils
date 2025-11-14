@@ -8,8 +8,9 @@ export default {
   },
   navbar: {
     home: 'Início',
-    spells: {
-      create: 'Criar Magia',
+    creation: {
+      spell: 'Criar Magia',
+      item: 'Criar Item',
     },
     users: {
       title: 'Usuários',

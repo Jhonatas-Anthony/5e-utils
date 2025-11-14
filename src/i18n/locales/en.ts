@@ -2,14 +2,15 @@ export default {
   common: {
     menu: 'Menu',
     home: 'Home',
-    spells: 'Spells',
+    creation: 'Criação',
     users: 'Users',
     settings: 'Settings',
   },
   navbar: {
     home: 'Home',
-    spells: {
-      create: 'Create Spell',
+    creation: {
+      spell: 'Create Spell',
+      item: 'Create Item',
     },
     users: {
       title: 'Users',

@@ -10,9 +10,10 @@ export const menuItems: MenuItem[] = [
     route: '/',
   },
   {
-    label:'common.spells',
+    label:'common.creation',
     children: [
-      { label: 'navbar.spells.create', route: '/spells/create' },
+      { label: 'navbar.creation.spell', route: '/create/spells' },
+      { label: 'navbar.creation.item', route: '/create/items' },
     ]
   },
 ]
