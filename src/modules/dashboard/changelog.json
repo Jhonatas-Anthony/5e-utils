@@ -6,6 +6,13 @@
       "changes": [
         { "title": "changelog.0_1_0.title", "description": "changelog.0_1_0.description" }
       ]
+    },
+    {
+      "version": "0.1.1",
+      "date": "2025-11-17",
+      "changes": [
+        { "title": "Mudança nas telas de criação", "description": "Modifica o texto das etiquetas das telas de criação" }
+      ]
     }
   ]
 }

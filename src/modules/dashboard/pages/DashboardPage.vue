@@ -3,7 +3,7 @@ import { useI18n } from "vue-i18n";
 import changelog from "../changelog.json";
 
 const { t } = useI18n();
-const versions = changelog.versions;
+const versions = changelog.versions.reverse();
 </script>
 
 <template>
