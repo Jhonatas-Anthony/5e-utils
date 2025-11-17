@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { i18n, setLocale } from '@/i18n'
+// import { i18n, setLocale } from '@/i18n'
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { menuItems } from '@/config/menu'
 
-const { t, locale } = useI18n()
+const { t } = useI18n()
 
-const currentLocale = ref<typeof i18n.global.locale.value>(
+/* const currentLocale = ref<typeof i18n.global.locale.value>(
   locale.value as typeof i18n.global.locale.value,
-)
+) */
 
 const menuOpen = ref(false)
 const openSubmenu = ref<string | null>(null)
@@ -26,9 +26,9 @@ function handleClickOutside(event: MouseEvent) {
   }
 }
 
-function changeLanguage() {
+/* function changeLanguage() {
   setLocale(currentLocale.value)
-}
+} */
 
 onMounted(() => document.addEventListener('click', handleClickOutside))
 onBeforeUnmount(() => document.removeEventListener('click', handleClickOutside))
@@ -39,10 +39,10 @@ onBeforeUnmount(() => document.removeEventListener('click', handleClickOutside))
     <div>
       <button @click.stop="toggleMenu">{{ t('common.menu') }}</button>
 
-      <select v-model="currentLocale" @change="changeLanguage">
+      <!-- <select v-model="currentLocale" @change="changeLanguage">
         <option value="pt">Português Brasil</option>
         <option value="en">English (in progress)</option>
-      </select>
+      </select> -->
 
       <!-- <button class="retro-toggle" @c  lick="toggleTheme">
         <span v-if="themeStore.theme !== 'light-theme'">🌙</span>
