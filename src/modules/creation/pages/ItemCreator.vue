@@ -195,7 +195,7 @@ watch(
         </div>
 
         <div>
-          <label>Descrição (Markdown):</label>
+          <label>Descrição:</label>
           <textarea v-model="item.description" rows="8"></textarea>
         </div>
 
