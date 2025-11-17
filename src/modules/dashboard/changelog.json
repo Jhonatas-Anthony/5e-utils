@@ -1,0 +1,11 @@
+{
+  "versions": [
+    {
+      "version": "0.1.0",
+      "date": "2025-11-17",
+      "changes": [
+        { "title": "changelog.0_1_0.title", "description": "changelog.0_1_0.description" }
+      ]
+    }
+  ]
+}

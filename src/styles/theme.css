@@ -1,0 +1,39 @@
+@import './light.css';
+
+:root {
+  /* Tipografia */
+  --font-title: "Press Start 2P", monospace;
+  --font-body: "VT323", monospace;
+
+  /* Espaçamentos */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+
+  /* Bordas */
+  --border-width: 2px;
+  --border-radius: 2px;
+
+  /* Shadow estilo pixel */
+  --pixel-shadow-size: 4px;
+
+  /* Transições */
+  --transition-fast: 0.1s;
+  --transition-medium: 0.2s;
+  --transition-slow: 0.3s;
+}
+
+/* Reset retro */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}

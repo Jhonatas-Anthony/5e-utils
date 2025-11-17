@@ -1,0 +1,20 @@
+.light-theme {
+  --bg: #f2f2f2;
+  --bg-light: #e4e4e4;
+
+  --primary: #7cec7c;   
+  --primary-dark: #4ea84e;
+
+  --secondary: #6cb8ff;
+  --secondary-dark: #4c7bb5;
+
+  --accent: #ff4f78;
+  --accent-dark: #c23f5d;
+
+  --text: #2a2a2a;
+  --text-muted: #565656;
+
+  --border: #bcbcbc;
+
+  --shadow-color: rgba(0, 0, 0, 0.25);
+}

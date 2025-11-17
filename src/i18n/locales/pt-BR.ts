@@ -6,6 +6,10 @@ export default {
     users: 'Usuários',
     settings: 'Configurações',
   },
+  home: {
+    title: 'Bem-vindo ao D&D Manager',
+    description: 'Gerenciador de D&D',
+  },
   navbar: {
     home: 'Início',
     creation: {
@@ -23,4 +27,10 @@ export default {
       preferences: 'Preferências',
     },
   },
+  changelog: {
+    "0_1_0": {
+      title: 'Versão 0.1.0',
+      description: 'Primeira versão do aplicativo',
+    }
+  }
 }

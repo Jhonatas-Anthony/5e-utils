@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'VT323';
+  src: url('./fonts/VT323/VT323-Regular.ttf') format('opentype');
+  font-weight: normal; /* Opcional: especifica o peso da fonte */
+  font-style: normal;  /* Opcional: especifica o estilo (normal, itálico, etc.) */
+}
+
+:root,
+[data-theme=light] {
+  --color-bg: #1c1c1c;        /* Preto fosco estilo Game Boy */
+  --color-bg-light: #2a2a2a;  /* Cinza escuro SNES */
+  --color-primary: #6ce06c;   /* Verde Game Boy */
+  --color-primary-dark: #4ea84e;
+  --color-secondary: #5ea1ff; /* Azul Mega Drive */
+  --color-accent: #ff4971;    /* Rosa neon arcade */
+  --color-text: #e6e6e6;
+  --color-text-muted: #a9a9a9;
+  --color-border: #3a3a3a;
+  --font-family: 'VT323', 'Courier New', monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
