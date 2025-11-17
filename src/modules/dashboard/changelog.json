@@ -13,6 +13,13 @@
       "changes": [
         { "title": "Mudança nas telas de criação", "description": "Modifica o texto das etiquetas das telas de criação" }
       ]
+    },
+    {
+      "version": "0.1.2",
+      "date": "2025-11-17",
+      "changes": [
+        { "title": "Botão para repositório", "description": "Adiciona um botão para o repositório do GitHub onde se encontra o projeto" }
+      ]
     }
   ]
 }
