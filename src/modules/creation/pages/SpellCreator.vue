@@ -270,7 +270,7 @@ watch(() => spell.value.description, async () => {
 
 <template>
   <div class="page-container">
-    <h1>Criar Magia a</h1>
+    <h1>Criar Magia</h1>
 
     <div class="layout">
       <!-- Formulário -->
@@ -364,4 +364,5 @@ watch(() => spell.value.description, async () => {
 
 <style scoped lang="css">
 @import "./cards_1.css";
+@import "./forms.css";
 </style>

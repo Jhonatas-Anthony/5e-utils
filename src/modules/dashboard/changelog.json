@@ -1,25 +1,44 @@
 {
-  "versions": [
-    {
-      "version": "0.1.0",
-      "date": "2025-11-17",
-      "changes": [
-        { "title": "changelog.0_1_0.title", "description": "changelog.0_1_0.description" }
-      ]
-    },
-    {
-      "version": "0.1.1",
-      "date": "2025-11-17",
-      "changes": [
-        { "title": "Mudança nas telas de criação", "description": "Modifica o texto das etiquetas das telas de criação" }
-      ]
-    },
-    {
-      "version": "0.1.2",
-      "date": "2025-11-17",
-      "changes": [
-        { "title": "Botão para repositório", "description": "Adiciona um botão para o repositório do GitHub onde se encontra o projeto" }
-      ]
-    }
-  ]
+    "versions": [
+        {
+            "version": "0.1.0",
+            "date": "2025-11-17",
+            "changes": [
+                {
+                    "title": "changelog.0_1_0.title",
+                    "description": "changelog.0_1_0.description."
+                }
+            ]
+        },
+        {
+            "version": "0.1.1",
+            "date": "2025-11-17",
+            "changes": [
+                {
+                    "title": "Mudança nas telas de criação",
+                    "description": "Modifica o texto das etiquetas das telas de criação."
+                }
+            ]
+        },
+        {
+            "version": "0.1.2",
+            "date": "2025-11-17",
+            "changes": [
+                {
+                    "title": "Botão para repositório",
+                    "description": "Adiciona um botão para o repositório do GitHub onde se encontra o projeto."
+                }
+            ]
+        },
+        {
+            "version": "0.1.3",
+            "date": "2025-11-17",
+            "changes": [
+                {
+                    "title": "Melhoria no estilo",
+                    "description": "Aplica melhorias visuais nos estilos das telas de criação de magias e itens."
+                }
+            ]
+        }
+    ]
 }

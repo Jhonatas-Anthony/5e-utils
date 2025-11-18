@@ -240,4 +240,5 @@ watch(
 
 <style scoped>
 @import "./cards_1.css";
+@import "./forms.css";
 </style>
